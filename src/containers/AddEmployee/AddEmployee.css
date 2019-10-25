@@ -1,0 +1,43 @@
+.add-employee {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.add-employee .employee-header {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 50px;
+    align-items: center; 
+}
+
+.employee-header i {
+    color: #999;
+    cursor: pointer;
+}
+
+.add-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+ 
+}
+
+.save-btn {
+    display: flex;
+    justify-content: flex-end;
+   align-items: center;
+   flex-basis: 50px;
+}
+
+.save-btn button {
+    padding: 8px 15px;
+    font-size: 16px;
+}
+
+.save-btn button:disabled {
+    background-color: #f8f8f8;
+    color: #aaa;
+    cursor: not-allowed;
+}

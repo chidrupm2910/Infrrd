@@ -20,3 +20,53 @@
 .App-link {
   color: #09d3ac;
 }
+
+#root {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  /* flex-direction: column; */
+  /* flex-grow: 1; */
+  flex-shrink: 1;
+  font-family: 'Lucida Sans Unicode','Lucida Grande',"Lucida Sans", sans-serif !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: #f8f8f8;
+}
+
+button {
+  font-size: 14px;
+  border: 0;
+  color: #fff;
+  background: #009cde;
+  border-radius: 5px;
+  font-weight: 550;
+  cursor: pointer;
+
+}
+
+.input-div input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-height: 30px;
+}
+
+.input-header {
+  font-size: 14px;
+  margin: 3px 0;
+}

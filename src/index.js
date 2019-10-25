@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
+import { Router } from 'react-router-dom';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import * as serviceWorker from './serviceWorker';
+import 'font-awesome/css/font-awesome.min.css';
+import tabReducer from './store/reducer/tabReducer';
+import employeeDetailsReducer from './store/reducer/employeeDetailsReducer';
+import history from './routes/history';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootReducer = combineReducers({
+    tabs: tabReducer,
+    employeeDetails: employeeDetailsReducer
+});
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+const store = createStore(rootReducer, applyMiddleware(thunk));
+// for debugging purpose
+window.store = store;
+ReactDOM.render(
+<Provider store={store}>
+    <Router history={history}>
+<App /></Router></Provider>,
+ document.getElementById('root'));
+
 serviceWorker.unregister();
