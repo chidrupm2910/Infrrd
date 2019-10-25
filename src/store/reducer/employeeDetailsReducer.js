@@ -2,7 +2,7 @@ import Input from '../../common/Input';
 import Select from '../../common/Select';
 import {NAME,COMPANY_NAME,CONTACT_NO,EMAIL_ID,DESIGNATION} from '../../constants/constants';
 
-import { UPDATE_INPUT_VALUE } from '../../constants/actionTypes';
+import { UPDATE_INPUT_VALUE, ADD_NEW_EMPLOYEE } from '../../constants/actionTypes';
 
 const initialState = () => ({
     details: {
@@ -40,23 +40,58 @@ const initialState = () => ({
     },
     showModal: false,
     currentEmployee: {
+        [NAME]: '',
+        [COMPANY_NAME]: '',
+        [EMAIL_ID]: '',
+        [CONTACT_NO]: '',
+        [DESIGNATION]: 'Software Developer'
+    },
+    allEmployees: {
+    'Chidrup':{
         [NAME]: 'Chidrup',
-        [COMPANY_NAME]: 'Infrrd',
-        [EMAIL_ID]: 'cmahakali@gmail.com',
-        [CONTACT_NO]: 123456789,
-        [DESIGNATION]: 'Senior Software Developer'
-    }
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'chidrupmahakali@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'ABC':{
+        [NAME]: 'ABC',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'chidrupmahakali@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'CDE': {
+        [NAME]: 'CDE',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'chidrupmahakali@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    }}
 })
 
 const EmployeeReducer = (state = initialState(), action = {}) => {
     switch(action.type) {
        
         case UPDATE_INPUT_VALUE: {
+   
             const newState = {...state.currentEmployee};
             newState[action.headerName] = action.value
+
             return {
                 ...state,
-                ...newState
+                currentEmployee: {
+                    ...state.currentEmployee,
+                    ...newState
+                }
+            }
+        }
+        case ADD_NEW_EMPLOYEE: {
+            const newEmployees = JSON.parse(JSON.stringify({...state.allEmployees}));
+            newEmployees[action.data[NAME]] = {...action.data}
+            return {
+                ...state,
+                allEmployees: {...newEmployees}
             }
         }
         default: {

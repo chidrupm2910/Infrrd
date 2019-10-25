@@ -41,3 +41,9 @@
     color: #aaa;
     cursor: not-allowed;
 }
+
+.error-message {
+    text-align: center;
+    font-size: 13px;
+    color: #ff0000;
+}

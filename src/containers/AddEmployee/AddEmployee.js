@@ -1,19 +1,32 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './AddEmployee.css';
+import { ADD_NEW_EMPLOYEE } from '../../constants/actionTypes';
 
 class AddEmployee extends Component {
 
-    componentDidMount() {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+         errorMessage: 'Error Occured'
+        };
+      }
+   
+    saveClicked = () => {
+        const { currentEmployee, addNewEmployee } = this.props;
+       addNewEmployee({...currentEmployee});
     }
+
 
     
     render() {
-        console.log('This Props add Employee', this.props)
+
         const { details, closeModal, currentEmployee } = this.props;
+        const { errorMessage } = this.state;
+ 
         return (
             <div className="add-employee">
+                <div className="error-message">{errorMessage}</div>
             <div className="employee-header">
                 <span>Employee Details</span>
                 <span onClick={() => {closeModal()}}><i className="fa fa-close"></i></span>
@@ -32,7 +45,7 @@ class AddEmployee extends Component {
               })}
             </div>
             <div className="save-btn">
-                <button disabled={Object.values(currentEmployee).some(el =>  el !== '')} type="button">
+                <button onClick={() => this.saveClicked()} disabled={Object.values(currentEmployee).some(el =>  el === '')} type="button">
                     Save
                 </button>
             </div>
@@ -46,4 +59,8 @@ const mapStateToProps = state => ({
     currentEmployee: state.employeeDetails.currentEmployee
 })
 
-export default connect(mapStateToProps, null)(AddEmployee);
+const mapDispatchToProps = dispatch => ({
+   addNewEmployee: (data) => dispatch({ type: ADD_NEW_EMPLOYEE, data})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddEmployee);

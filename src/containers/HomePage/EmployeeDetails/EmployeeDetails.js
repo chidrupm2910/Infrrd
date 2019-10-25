@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
-import Modal from '../../common/Modal';
-import AddEmployee from '../AddEmployee/AddEmployee';
+import Modal from '../../../common/Modal';
+import AddEmployee from '../../AddEmployee/AddEmployee';
+import './EmployeeContent';
+import EmployeeContent from './EmployeeContent';
 
 class EmployeeDetails extends Component {
 
@@ -12,10 +14,6 @@ class EmployeeDetails extends Component {
         };
       }
 
-    componentDidMount() {
-
-    }
-    
 
     render() {
         const { modalDisplay } = this.state;
@@ -31,16 +29,17 @@ class EmployeeDetails extends Component {
                <div>
                    <button onClick={() => {this.setState({modalDisplay: true})}} className="add-new" type="button">
                        Add Employee
-                       </button>
+                    </button>
                </div>
                </div>
+               <EmployeeContent />
                </div>
         )
     }
 }
 
 const mapStateToProps = state =>( {
-    tabs: state.tabs,
+    // tabs: state.tabs,
     // modalDisplay: state.employeeDetails.showModal
     })
 
