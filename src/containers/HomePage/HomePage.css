@@ -28,9 +28,37 @@
     
 }
 
+.action-row {
+    display: flex;
+    align-items: center;
+}
+
+.action-row .filter {
+    position: relative;
+}
+
+.action-row .filter .selected {
+    background: #009cde !important;
+    color: #fff !important;
+}
+
+.action-row .filter .header-span {
+    cursor: pointer;
+    border: 1px solid #009cde;
+    color: #009cde;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.action-row .filter .header-span:hover {
+    background: #009cde;
+    color: #fff;
+}
+
 .add-new {
     
     padding: 8px 16px;
+    margin-left: 20px;
 
 
 }

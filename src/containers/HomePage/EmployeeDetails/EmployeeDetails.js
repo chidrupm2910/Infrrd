@@ -5,7 +5,7 @@ import AddEmployee from '../../AddEmployee/AddEmployee';
 import './EmployeeContent';
 import EmployeeContent from './EmployeeContent';
 import { DELETE_AN_EMPLOYEE } from '../../../constants/actionTypes';
-
+import SearchFilter from '../../SearchFilter/SearchFilter';
 class EmployeeDetails extends Component {
 
     constructor(props) {
@@ -13,7 +13,8 @@ class EmployeeDetails extends Component {
         this.state = {
          modalDisplay: false,
          mode: '',
-         deleteName: ''
+         deleteName: '',
+         searchFilter: false
         };
       }
 
@@ -27,7 +28,7 @@ class EmployeeDetails extends Component {
       }
 
     render() {
-        const { modalDisplay, mode, deleteName,  } = this.state;
+        const { modalDisplay, mode, deleteName,searchFilter  } = this.state;
 
         return (
            <div className="employee-details">
@@ -48,7 +49,11 @@ class EmployeeDetails extends Component {
                </div>: null}
                <div className="header">
                <div>Employee Details</div>
-               <div>
+               <div className="action-row">
+                   <div className="filter">
+                       <span className={(searchFilter) ? "header-span selected" : 'header-span'} onClick={() => {this.setState({searchFilter: !(searchFilter)})}}>Filter</span>
+                     {searchFilter ? <SearchFilter /> : null}
+                   </div>
                    <button onClick={() => {this.setState({modalDisplay: true, mode: 'add'})}} className="add-new" type="button">
                        Add Employee
                     </button>

@@ -1,0 +1,35 @@
+.search-filter {
+    position: absolute;
+    margin-top: 6px;
+    right: 0;
+    min-width: 200px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;;
+    box-shadow: 0px 3px 5px #00000035;
+}
+
+.search-filter input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.input-div {
+    padding:15px 10px;
+}
+
+
+.search-filter .list div {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.list div i{
+  color: #009cde;
+}
+
+.list div .filter-value {
+    color: #222;
+}
