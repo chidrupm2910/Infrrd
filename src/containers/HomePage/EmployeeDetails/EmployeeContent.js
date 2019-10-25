@@ -1,10 +1,17 @@
 import React , { Component } from 'react';
 import { connect } from 'react-redux';
 import {NAME,COMPANY_NAME,CONTACT_NO,EMAIL_ID,DESIGNATION} from '../../../constants/constants';
+import { UPDATE_CURRENT_EMPLOYEE } from '../../../constants/actionTypes';
 class EmployeeContent extends Component {
 
+    editClicked = (currentEmployee) => {
+     const { openModal, updateCurrentEmployee } = this.props;
+     updateCurrentEmployee(currentEmployee);
+     openModal()
+    }
+
   render() {
-      const { currentEmployee, allEmployees } = this.props;
+      const { allEmployees, deleteClicked } = this.props;
       return (
           <div className="employee-tabular-content">
              <div className="table-header">
@@ -20,8 +27,8 @@ class EmployeeContent extends Component {
              {Object.values(allEmployees).map(el => (
                    <div key={el} className="table-row">
                    <div className="manipulate">
-                       <span className="edit">Edit</span>
-                       <span className="delete">Delete</span>
+                       <span onClick={() => this.editClicked(el)} className="edit">Edit</span>
+                       <span onClick={() => {deleteClicked(el[NAME])}} className="delete">Delete</span>
                    </div>
                    <div className="info-block">
                    <div>{el[NAME]}</div>
@@ -40,6 +47,10 @@ class EmployeeContent extends Component {
 const mapStateToProps = state => ({
     currentEmployee: state.employeeDetails.currentEmployee,
     allEmployees: state.employeeDetails.allEmployees
+});
+
+const mapDispatchToProps = dispatch => ({
+    updateCurrentEmployee: (currentEmployee) => dispatch({ type: UPDATE_CURRENT_EMPLOYEE, currentEmployee}),
 })
 
-export default connect(mapStateToProps, null)(EmployeeContent);
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeeContent);

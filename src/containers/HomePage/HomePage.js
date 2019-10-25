@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import Tabs from './Tabs';
 import './HomePage.css'
 import EmployeeDetails from './EmployeeDetails/EmployeeDetails';
-import Modal from '../../common/Modal';
 
 class HomePage extends Component {
 

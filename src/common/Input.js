@@ -3,15 +3,14 @@ import { connect } from 'react-redux';
 import {UPDATE_INPUT_VALUE} from '../constants/actionTypes';
 
 const Input = (props) => {
-    const { headerName, type, pattern, currentValue } = props;
+    const { headerName, type, currentValue } = props;
 
     const handleChange = (e) => {
-        console.log('EVent',  e.target.value)
         const {updateInputValue} = props;
         updateInputValue(headerName, e.target.value)
     }
     return (
-        <div className="input-section">
+        <div key={headerName} className="input-section">
             <div className="input-header">
                 {headerName}
             </div>

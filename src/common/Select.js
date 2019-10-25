@@ -16,7 +16,7 @@ import {UPDATE_INPUT_VALUE} from '../constants/actionTypes';
             </div>
             <select onChange={handleChange}>
              {options.map(el => (
-                 <option selected={el === currentValue} key={el}>{el}</option>
+                 <option defaultValue={el === currentValue} key={el}>{el}</option>
              ))}
             </select>
         </div>

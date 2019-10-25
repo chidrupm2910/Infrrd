@@ -2,7 +2,7 @@ import Input from '../../common/Input';
 import Select from '../../common/Select';
 import {NAME,COMPANY_NAME,CONTACT_NO,EMAIL_ID,DESIGNATION} from '../../constants/constants';
 
-import { UPDATE_INPUT_VALUE, ADD_NEW_EMPLOYEE } from '../../constants/actionTypes';
+import { UPDATE_INPUT_VALUE, ADD_NEW_EMPLOYEE, UPDATE_CURRENT_EMPLOYEE, DELETE_AN_EMPLOYEE } from '../../constants/actionTypes';
 
 const initialState = () => ({
     details: {
@@ -47,22 +47,22 @@ const initialState = () => ({
         [DESIGNATION]: 'Software Developer'
     },
     allEmployees: {
-    'Chidrup':{
+    'chidrup':{
         [NAME]: 'Chidrup',
         [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrupmahakali@gmail.com',
+        [EMAIL_ID]: 'chidrup@gmail.com',
         [CONTACT_NO]: '242131231',
         [DESIGNATION]: 'Software Developer'
     },
-    'ABC':{
-        [NAME]: 'ABC',
+    'mike':{
+        [NAME]: 'mike',
         [COMPANY_NAME]: 'PayPal',
         [EMAIL_ID]: 'chidrupmahakali@gmail.com',
         [CONTACT_NO]: '242131231',
         [DESIGNATION]: 'Software Developer'
     },
-    'CDE': {
-        [NAME]: 'CDE',
+    'chelsey': {
+        [NAME]: 'chelsey',
         [COMPANY_NAME]: 'PayPal',
         [EMAIL_ID]: 'chidrupmahakali@gmail.com',
         [CONTACT_NO]: '242131231',
@@ -87,11 +87,29 @@ const EmployeeReducer = (state = initialState(), action = {}) => {
             }
         }
         case ADD_NEW_EMPLOYEE: {
-            const newEmployees = JSON.parse(JSON.stringify({...state.allEmployees}));
-            newEmployees[action.data[NAME]] = {...action.data}
+            let newEmployees = JSON.parse(JSON.stringify({...state.allEmployees}));
+            newEmployees[action.data[NAME].toLowerCase()] = {...action.data}
             return {
                 ...state,
+                currentEmployee: {...initialState().currentEmployee},
                 allEmployees: {...newEmployees}
+            }
+        }
+        case UPDATE_CURRENT_EMPLOYEE: {
+            return {
+                ...state,
+                currentEmployee: {...action.currentEmployee}
+            }
+        }
+        case DELETE_AN_EMPLOYEE: {
+            const newState = JSON.parse(JSON.stringify({...state.allEmployees}));
+            delete newState[action.name];
+            return {
+                ...state,
+                allEmployees: {
+                    ...newState
+                }
+              
             }
         }
         default: {

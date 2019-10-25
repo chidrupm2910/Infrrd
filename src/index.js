@@ -8,12 +8,10 @@ import { Router } from 'react-router-dom';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import * as serviceWorker from './serviceWorker';
 import 'font-awesome/css/font-awesome.min.css';
-import tabReducer from './store/reducer/tabReducer';
 import employeeDetailsReducer from './store/reducer/employeeDetailsReducer';
 import history from './routes/history';
 
 const rootReducer = combineReducers({
-    tabs: tabReducer,
     employeeDetails: employeeDetailsReducer
 });
 

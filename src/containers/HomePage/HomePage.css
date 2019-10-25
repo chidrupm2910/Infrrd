@@ -29,8 +29,8 @@
 }
 
 .add-new {
-
-    padding: 5px 16px;
+    
+    padding: 8px 16px;
 
 
 }
@@ -49,10 +49,8 @@
 
 .modal-outer-div .modal-content {
     background-color: #fff;
-    padding: 30px;
     display: flex;
-    min-width: 450px;
-    min-height: 500px;
+
 }
 
 /* .employee-tabular-content {
@@ -131,5 +129,31 @@
     color: #fff;;
     background: #009cde;
     text-decoration: none;
+}
+
+.delete-modal {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-modal .text {
+    margin-bottom: 10px;;
+}
+
+.delete-buttons button {
+    padding: 8px 12px;
+    margin-right: 20px;
+    background: #fff;;
+}
+
+.delete-buttons .confirm {
+    color: #ff9600;
+    border: 1px solid #ff9600;
+}
+
+.delete-buttons .cancel {
+    color: #009cde;
+    border: 1px solid #009cde;
 }
 
