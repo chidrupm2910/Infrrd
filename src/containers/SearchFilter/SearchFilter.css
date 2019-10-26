@@ -7,7 +7,24 @@
     border: 1px solid #ddd;
     border-radius: 5px;;
     box-shadow: 0px 3px 5px #00000035;
-    max-height: 350px;
+    min-height: 350px;
+    z-index: 2;
+}
+
+.search-filter, .list, .list-rows {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.list {
+    z-index: 2;
+    position: relative;
+    overflow: auto;
+}
+
+.list-rows {
+    position: absolute;
 }
 
 .search-filter input {
@@ -24,13 +41,17 @@
 }
 
 .search-filter .list div {
-    padding: 5px 10px;
+    padding: 8px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
 }
 
 .list div i{
   color: #009cde;
+}
+
+.list div .unselected {
+    color: #ccc !important;
 }
 
 .list div .filter-value {

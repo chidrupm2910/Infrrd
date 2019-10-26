@@ -10,13 +10,22 @@ class AddEmployee extends Component {
         super(props);
         this.state = {
          errorMessage: '',
-         errorShow: false
+         errorShow: false,
+         currentName: ''
         };
       }
+
+      componentDidMount() {
+          const { mode, currentEmployee } = this.props;
+          if(mode === 'edit') {
+              this.setState({currentName: currentEmployee[NAME].toLowerCase()})
+          }
+      }
    
+
     saveClicked = (mode) => {
-       
-  
+        
+         const { currentName } = this.state;
         const { currentEmployee, addNewEmployee, allEmployees, closeModal } = this.props;
         var emailValidator = new RegExp('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$');
         if(allEmployees[currentEmployee[NAME].toLowerCase()] && mode === 'add'){
@@ -33,7 +42,7 @@ class AddEmployee extends Component {
         if(mode === 'edit') {
             closeModal();
         }
-       addNewEmployee({...currentEmployee});
+       addNewEmployee({...currentEmployee}, mode, currentName);
     }
 
 
@@ -42,7 +51,7 @@ class AddEmployee extends Component {
 
         const { details, closeModal, currentEmployee, mode } = this.props;
         const { errorMessage, errorShow } = this.state;
- 
+        console.log('This State', this.state)
         return (
             <div className="add-employee">
               { errorShow ? <div className="error-message">{errorMessage}</div> : null}
@@ -79,7 +88,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-   addNewEmployee: (data) => dispatch({ type: ADD_NEW_EMPLOYEE, data})
+   addNewEmployee: (data, mode, currentName) => dispatch({ type: ADD_NEW_EMPLOYEE, data, mode, currentName})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddEmployee);

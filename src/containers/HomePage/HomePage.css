@@ -105,6 +105,21 @@
     margin: 0 30px;
 }
 
+.all-rows {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.rows {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .table-header, .table-row {
     display: flex;
     border: 1px solid #ccc;

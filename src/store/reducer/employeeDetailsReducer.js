@@ -1,6 +1,7 @@
 import Input from '../../common/Input';
 import Select from '../../common/Select';
 import {NAME,COMPANY_NAME,CONTACT_NO,EMAIL_ID,DESIGNATION} from '../../constants/constants';
+import allEmployees from '../../constants/employees';
 
 import { UPDATE_INPUT_VALUE, ADD_NEW_EMPLOYEE, UPDATE_CURRENT_EMPLOYEE, DELETE_AN_EMPLOYEE } from '../../constants/actionTypes';
 
@@ -46,70 +47,7 @@ const initialState = () => ({
         [CONTACT_NO]: '',
         [DESIGNATION]: 'Software Developer'
     },
-    allEmployees: {
-    'chidrup':{
-        [NAME]: 'Chidrup',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'mike':{
-        [NAME]: 'Mike',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'chelsey': {
-        [NAME]: 'Chelsey',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'leo':{
-        [NAME]: 'Leo',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'iniesta':{
-        [NAME]: 'Iniesta',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'xavi': {
-        [NAME]: 'Xavi',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'pedro':{
-        [NAME]: 'Pedro',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'frenkie':{
-        [NAME]: 'Frenkie',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'arthur': {
-        [NAME]: 'Arthur',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    }}
+    allEmployees
 })
 
 const EmployeeReducer = (state = initialState(), action = {}) => {
@@ -130,6 +68,11 @@ const EmployeeReducer = (state = initialState(), action = {}) => {
         }
         case ADD_NEW_EMPLOYEE: {
             let newEmployees = JSON.parse(JSON.stringify({...state.allEmployees}));
+            console.log("Action", action)
+            if(action.mode === 'edit'){
+                delete newEmployees[action.currentName];
+            }
+            console.log(newEmployees)
             newEmployees[action.data[NAME].toLowerCase()] = {...action.data}
             return {
                 ...state,
@@ -154,6 +97,7 @@ const EmployeeReducer = (state = initialState(), action = {}) => {
               
             }
         }
+       
         default: {
             return {
                 ...state

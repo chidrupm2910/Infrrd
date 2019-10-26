@@ -11,8 +11,8 @@ class EmployeeContent extends Component {
     }
 
   render() {
-      const { allEmployees, deleteClicked, filterApplied, employeeList } = this.props;
-      console.log('Employee List', employeeList);
+      const { allEmployees, deleteClicked, filterApplied, employeeList, filterSelected } = this.props;
+    //   console.log('Employee List', employeeList);
       return (
           <div className="employee-tabular-content">
              <div className="table-header">
@@ -25,8 +25,10 @@ class EmployeeContent extends Component {
                  <div>Designation</div>
                  </div>
              </div>
+             <div className="all-rows">
+                 <div className="rows">
              {Object.values(allEmployees).map(el => {
-                 if(!(filterApplied) || employeeList.includes(el[NAME].toLowerCase())){
+                 if(!(filterApplied || filterSelected) || employeeList.includes(el[NAME].toLowerCase())){
                  return (
                    <div key={el[NAME]} className="table-row">
                    <div className="manipulate">
@@ -42,8 +44,9 @@ class EmployeeContent extends Component {
                    </div>
                </div>
              )}
+             
              return null;
-             })}
+             })}</div></div>
           </div>
       )
   }
@@ -53,7 +56,8 @@ const mapStateToProps = state => ({
     currentEmployee: state.employeeDetails.currentEmployee,
     allEmployees: state.employeeDetails.allEmployees,
     employeeList: state.searchFilter.employeeList,
-    filterApplied:  state.searchFilter.filterApplied
+    filterApplied:  state.searchFilter.filterApplied,
+    filterSelected:  state.searchFilter.filterSelected
 });
 
 const mapDispatchToProps = dispatch => ({
