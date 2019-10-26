@@ -27,6 +27,10 @@
     padding: 25px;
     
 }
+.employee-details .header  > div {
+    color: #222;
+    font-weight: 600;
+}
 
 .action-row {
     display: flex;
@@ -160,8 +164,10 @@
     width: 15%;
     justify-content: space-around;
     font-size: 13px;
+    font-weight: 600;;
     text-decoration: underline;
     cursor: pointer;
+    color: #009cde;
 }
 
 .manipulate span {

@@ -18,6 +18,8 @@ class EmployeeDetails extends Component {
         };
       }
 
+
+
       cancelConfirm = (mode, deleteName) => {
          
           if(mode === 'confirm') {
@@ -51,8 +53,8 @@ class EmployeeDetails extends Component {
                <div>Employee Details</div>
                <div className="action-row">
                    <div className="filter">
-                       <span className={(searchFilter) ? "header-span selected" : 'header-span'} onClick={() => {this.setState({searchFilter: !(searchFilter)})}}>Filter</span>
-                     {searchFilter ? <SearchFilter /> : null}
+                       <span className={(searchFilter) ? "header-span selected" : 'header-span'} onClick={(event) => {this.setState({searchFilter: !(searchFilter)})}}>Filter</span>
+                     {searchFilter ? <SearchFilter filterCallBack={() => {this.setState({ searchFilter: false})}} /> : null}
                    </div>
                    <button onClick={() => {this.setState({modalDisplay: true, mode: 'add'})}} className="add-new" type="button">
                        Add Employee

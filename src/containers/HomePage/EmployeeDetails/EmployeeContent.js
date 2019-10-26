@@ -12,7 +12,6 @@ class EmployeeContent extends Component {
 
   render() {
       const { allEmployees, deleteClicked, filterApplied, employeeList, filterSelected } = this.props;
-    //   console.log('Employee List', employeeList);
       return (
           <div className="employee-tabular-content">
              <div className="table-header">

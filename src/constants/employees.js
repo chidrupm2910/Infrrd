@@ -2,129 +2,129 @@ import { NAME, COMPANY_NAME, CONTACT_NO, DESIGNATION, EMAIL_ID} from './constant
  const allEmployees = {
     'chidrup':{
         [NAME]: 'Chidrup',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'chidrup@infrrd.com',
+        [CONTACT_NO]: '2421312333',
         [DESIGNATION]: 'Software Developer'
     },
     'mike':{
         [NAME]: 'Mike',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'mike@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Senior Software Developer'
     },
     'chelsey': {
         [NAME]: 'Chelsey',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'chelsey@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Senior Software Developer'
     },
     'leo':{
         [NAME]: 'Leo',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'chidrup@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Quality Assurance'
+    },
+    'eric':{
+        [NAME]: 'Eric',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'eric@infrrd.com',
+        [CONTACT_NO]: '2421312333',
         [DESIGNATION]: 'Software Developer'
     },
-    'iniesta':{
-        [NAME]: 'Iniesta',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'xavi': {
-        [NAME]: 'Xavi',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
+    'xavier': {
+        [NAME]: 'Xavier',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'xavier@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]:'Technical Lead',
     },
     'pedro':{
         [NAME]: 'Pedro',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'pedro@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Quality Assurance'
     },
-    'frenkie':{
-        [NAME]: 'Frenkie',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
+    'franklin':{
+        [NAME]: 'Franklin',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'franklin@infrrd.com',
+        [CONTACT_NO]: '2421312333',
         [DESIGNATION]: 'Software Developer'
     },
     'arthur': {
         [NAME]: 'Arthur',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'arthur@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Manager'
+    },
+    'charlie':{
+        [NAME]: 'Charlie',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'charlie@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]:'Technical Lead',
+    },
+    'ash':{
+        [NAME]: 'Ash',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'ash@infrrd.com',
+        [CONTACT_NO]: '2421312333',
         [DESIGNATION]: 'Software Developer'
     },
-    'chidrup1':{
-        [NAME]: 'Chidrup',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
+    'louis': {
+        [NAME]: 'Louis',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'louis@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Manager'
+    },
+    'leonardo':{
+        [NAME]: 'Leonardo',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'leonardo@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]:'Quality Assurance'
+    },
+    'harry':{
+        [NAME]: 'Harry',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'harry@infrrd.com',
+        [CONTACT_NO]: '2421312333',
         [DESIGNATION]: 'Software Developer'
     },
-    'mike1':{
-        [NAME]: 'Mike',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
+    'wayne': {
+        [NAME]: 'Wayne',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'wayne@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Manager'
+    },
+    'perez':{
+        [NAME]: 'Perez',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'perez@infrrd.com',
+        [CONTACT_NO]: '2421312333',
         [DESIGNATION]: 'Software Developer'
     },
-    'chelsey1': {
-        [NAME]: 'Chelsey',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
+    'ryan':{
+        [NAME]: 'Ryan',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'ryan@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Quality Assurance'
     },
-    'leo1':{
-        [NAME]: 'Leo',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'iniesta1':{
-        [NAME]: 'Iniesta',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'xavi1': {
-        [NAME]: 'Xavi',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'pedro1':{
-        [NAME]: 'Pedro',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrup@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'frenkie1':{
-        [NAME]: 'Frenkie',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'mike@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
-    },
-    'arthura': {
-        [NAME]: 'Arthur',
-        [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chelsey@gmail.com',
-        [CONTACT_NO]: '242131231',
-        [DESIGNATION]: 'Software Developer'
+    'alon': {
+        [NAME]: 'Alon',
+        [COMPANY_NAME]: 'Infrrd',
+        [EMAIL_ID]: 'chelsey@infrrd.com',
+        [CONTACT_NO]: '2421312333',
+        [DESIGNATION]: 'Technical Lead',
     }
 } 
 

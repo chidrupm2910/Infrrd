@@ -35,10 +35,11 @@ class SearchFilter extends Component {
     }
 
     render() {
-        const { allEmployees, searchFilter } = this.props;
+        const { allEmployees, searchFilter, filterCallBack } = this.props;
         const {  searchText, filteredValues, actualFilterValues} = searchFilter;
         return (
             <div className="search-filter">
+                <div className="close-div"><i onClick={() => {filterCallBack()}} className="fa fa-close"></i></div>
                 <div className="input-div">
                     <input value={searchText} onChange={(event) => this.handleInputChange(event, allEmployees)} type="text" placeholder="Filter By Name..." />
                 </div>

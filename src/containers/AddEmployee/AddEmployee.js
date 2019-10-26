@@ -51,7 +51,6 @@ class AddEmployee extends Component {
 
         const { details, closeModal, currentEmployee, mode } = this.props;
         const { errorMessage, errorShow } = this.state;
-        console.log('This State', this.state)
         return (
             <div className="add-employee">
               { errorShow ? <div className="error-message">{errorMessage}</div> : null}
