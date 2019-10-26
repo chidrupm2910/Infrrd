@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component} from 'react';
 import './App.css';
 import HeaderBar from './containers/HeaderBar/HeaderBar';
 import HomePage from './containers/HomePage/HomePage';
 
-function App() {
+class App extends Component {
+
+  render() {
   return (
     <div className="main-root">
       <HeaderBar />
@@ -12,6 +14,8 @@ function App() {
      </div>
     </div>
   );
+  }
 }
+
 
 export default App;

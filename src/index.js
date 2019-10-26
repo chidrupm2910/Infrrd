@@ -9,10 +9,12 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import * as serviceWorker from './serviceWorker';
 import 'font-awesome/css/font-awesome.min.css';
 import employeeDetailsReducer from './store/reducer/employeeDetailsReducer';
+import filterReducer from './store/reducer/filterReducer';
 import history from './routes/history';
 
 const rootReducer = combineReducers({
-    employeeDetails: employeeDetailsReducer
+    employeeDetails: employeeDetailsReducer,
+    searchFilter: filterReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

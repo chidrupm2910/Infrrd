@@ -55,16 +55,58 @@ const initialState = () => ({
         [DESIGNATION]: 'Software Developer'
     },
     'mike':{
-        [NAME]: 'mike',
+        [NAME]: 'Mike',
         [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrupmahakali@gmail.com',
+        [EMAIL_ID]: 'mike@gmail.com',
         [CONTACT_NO]: '242131231',
         [DESIGNATION]: 'Software Developer'
     },
     'chelsey': {
-        [NAME]: 'chelsey',
+        [NAME]: 'Chelsey',
         [COMPANY_NAME]: 'PayPal',
-        [EMAIL_ID]: 'chidrupmahakali@gmail.com',
+        [EMAIL_ID]: 'chelsey@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'leo':{
+        [NAME]: 'Leo',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'chidrup@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'iniesta':{
+        [NAME]: 'Iniesta',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'mike@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'xavi': {
+        [NAME]: 'Xavi',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'chelsey@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'pedro':{
+        [NAME]: 'Pedro',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'chidrup@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'frenkie':{
+        [NAME]: 'Frenkie',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'mike@gmail.com',
+        [CONTACT_NO]: '242131231',
+        [DESIGNATION]: 'Software Developer'
+    },
+    'arthur': {
+        [NAME]: 'Arthur',
+        [COMPANY_NAME]: 'PayPal',
+        [EMAIL_ID]: 'chelsey@gmail.com',
         [CONTACT_NO]: '242131231',
         [DESIGNATION]: 'Software Developer'
     }}
